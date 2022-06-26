@@ -13,6 +13,14 @@
         </div>
         <br>
         <div class="row">
+            <div class="col-md-12">
+                <span><label for="">Cantidad de Entrada</label></span>
+                <input type="number" id="cantEntrada" name="cantEntrada" class="form-control" required
+                    placeholder="Ej.: 200, 400, 1000..." value="{{ $MateriaPrima->cantidad_entrada }}">
+            </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col-md-6">
                 <span><label for="">Medida</label></span>
                 <input type="text" id="medida_" name="medida_" class="form-control" value="{{ $MateriaPrima->medida }}">
@@ -53,6 +61,7 @@
         var medida = $('#medida_').val();
         var cantMinima = $('#cantMinima_').val();
         var planta = $('#planta_update').val();
+        var cantEntrada = $('#cantEntrada').val();
 
         swal({
             title: "Esta seguro?",
@@ -72,6 +81,7 @@
                         cantMinima: cantMinima,
                         planta: planta,
                         idMateriaPrima: idMateriaPrima,
+                        cantEntrada: cantEntrada,
                         _token: "{{ csrf_token() }}"
                     }
                 }).done(function (res){

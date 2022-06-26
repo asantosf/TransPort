@@ -146,13 +146,15 @@
 </html>
 
 <script type="text/javascript">
+
     $(document).ready(function() {
         var planta = $('#planta').val();
 
         tableMateriaPrimas(planta);
     });
     
-    function tableMateriaPrimas(planta) {
+    function tableMateriaPrimas(planta)
+    {
         $('#tablaMateriaPrimas').DataTable({
             autoWidth: true,
             responsive: true,
@@ -198,14 +200,16 @@
         });
     }
 
-    function guardarMateriaPrima() {
+    function guardarMateriaPrima()
+    {
         var nombreMateriaPrima = $('#nombreMateriaPrima').val();
         var medida = $('#medida').val();
         var cantMinima = $('#cantMinima').val();
         var planta_save = $('#planta_save').val();
+        var cantEntrada = $('#cantEntrada').val();
 
-
-        if (nombreMateriaPrima == '' || medida == '' || cantMinima == '' || planta_save == '') {
+        if (nombreMateriaPrima == '' || medida == '' || cantMinima == '' || planta_save == '' || cantEntrada == '') 
+        {
             swal({
                 title: "Exito!",
                 text: 'Por favor, llene todos los campos requeridos.',
@@ -220,6 +224,7 @@
                     medida: medida,
                     cantMinima: cantMinima,
                     planta_save: planta_save,
+                    cantEntrada: cantEntrada,
                     _token: "{{ csrf_token() }}"
                 }
             }).done(function(res) {
@@ -240,7 +245,8 @@
         }
     }
 
-    function editarMateriaPrima(idMateriaPrima) {
+    function editarMateriaPrima(idMateriaPrima) 
+    {
         var eidtarMateriaPrimaModal = $('#eidtarMateriaPrimaModal');
         var editarMateriaPrima_content = $('#editarMateriaPrima_content');
 

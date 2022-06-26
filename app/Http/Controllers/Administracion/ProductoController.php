@@ -51,7 +51,8 @@ class ProductoController extends Controller
         
         $data = new MateriaPrima();
         $data->nombre = $request->nombreMateriaPrima;
-        $data->cantidad_minima = $request->cantMinima;
+        $data->cantidad_minima = $request->cantMinima; 
+        $data->cantidad_entrada = $request->cantEntrada;
         $data->medida = $request->medida; 
         $data->planta_id = $request->planta_save;
         $MateriaPrimaSave = $data->save();
@@ -84,6 +85,7 @@ class ProductoController extends Controller
         $data->nombre = $request->nombreMateriaPrima;
         $data->medida = $request->medida;
         $data->cantidad_minima = $request->cantMinima;
+        $data->cantidad_entrada = $request->cantEntrada;
         $data->planta_id = $request->planta;
         $materiaUpdate = $data->save();
 

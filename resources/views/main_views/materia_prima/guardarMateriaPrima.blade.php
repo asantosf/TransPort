@@ -21,6 +21,14 @@
                             </div>
                             <br>
                             <div class="row">
+                                <div class="col-md-12">
+                                    <span><label for="">Cantidad de Entrada</label></span>
+                                    <input type="number" id="cantEntrada" name="cantEntrada" class="form-control" required
+                                        placeholder="Ej.: 200, 400, 1000...">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <span><label for="">Medida</label></span>
                                     <input type="text" id="medida" name="medida" class="form-control" required
