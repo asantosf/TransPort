@@ -15,10 +15,8 @@ class CreateDetalleProduccionTable extends Migration
     {
         Schema::create('detalle_produccion', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('produccion_id');
-            $table->foreign('produccion_id')->references('id')->on('produccion');
-            $table->unsignedBigInteger('materia_prima_id');
-            $table->foreign('materia_prima_id')->references('id')->on('materia_prima');
+            $table->integer('produccion_id');
+            $table->integer('materia_prima_id');
             $table->decimal('cantidad_utilizada');
             $table->timestamps();
             $table->softDeletes();
